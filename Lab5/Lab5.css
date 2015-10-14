@@ -1,0 +1,30 @@
+body{
+    font-size: xx-large;
+    font: bold;
+    color: azure;
+    background-color: cadetblue;
+}
+
+textarea{
+    width: 400px;
+    height: 100px;
+    font-size: large;
+    display: ruby-text;
+    margin-bottom: 10px;
+    background-color: azure;
+}
+input[type="button"]{
+    width: 100px;
+    height: 50px;
+    background-color: darkorange;
+    font-size: large;
+    color: azure;
+
+}
+.modify{
+    opacity: 0;
+}
+p:hover{
+    color: darkorange;
+}
+
