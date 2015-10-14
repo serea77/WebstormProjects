@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Laboratoire 6</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>postIts manager</h1>
+        <hr />
+        <div class="page"></div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+    <script>
+
+        $.ajaxPrefilter(function(options, originalOptions,jqXHR){
+            options.url = 'http://localhost:5000' + options.url;
+        });
+
+        var Tasks = Backbone.Collection.extend({
+            url: '/tasks'
+        });
+
+        var TasksList = Backbone.View.extend({
+            el: '.page',
+            render: function(){
+                var that = this;
+                var tasks = new Tasks();
+                tasks.fetch({
+                    success: function(tasks){
+                        var template = _.template($("#postIt-list-template").html(), {tasks: tasks.models});
+                        that.$el.html(template);
+
+                    }
+
+                })
+            }
+        });
+
+        var Router = Backbone.Router.extend({
+            routes: {
+                '': 'home'
+            }
+        });
+
+        var tasksList = new TasksList;
+
+        var router = new Router();
+        router.on('route:home', function() {
+            tasksList.render();
+        });
+        Backbone.history.start();
+    </script>
+
+    <script type="text/template" id="postIt-list-template">
+        <table >
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>tache</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% _.each(tasks, function(task) { %>
+            <tr>
+                <td><%= task.get('id') %></td>
+                <td><%= task.get('task') %></td>
+                <td></td>
+            </tr>
+
+            <% }); %>
+            </tbody>
+        </table>
+    </script>
+
+
+
+</body>
+</html>
