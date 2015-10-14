@@ -1,0 +1,160 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Freckle Face', cursive;
+}
+
+#nav {
+    height: 68px;
+    background-color: black;
+    color: white;
+}
+
+#nav .nav-item {
+    float: left;
+    padding: 20px;
+    background-color: black;
+}
+
+#nav .nav-item:hover {
+    border-bottom: 10px solid white;
+    background-color: #2B2B2B;
+}
+
+#nav .active {
+    border-bottom: 10px solid #00D4F5;
+}
+
+#nav #logo {
+    float: left;
+    font-family: 'Freckle Face', cursive;
+    font-size: 28px;
+    padding: 15px;
+}
+
+.cat {
+    clear: both;
+}
+
+.cat .cat-description {
+    float: left;
+    width: 40%
+}
+
+.cat .cat-description p {+
+    padding: 0 15px;
+}
+
+.actions {
+    width: 70%;
+    margin: auto;
+}
+
+.btn {
+    height: 40px;
+    width: 25%;
+    display: inline-block;
+    border-radius: 8px;
+    padding: 10px 15px 0;
+}
+
+.cat .cat-description .btn.btn-like {
+    background-color: #00FFB7;
+}
+
+.cat .cat-description .btn.btn-like:hover {
+    background-color: #80FFDB;
+}
+
+.cat .cat-description .btn.btn-dislike {
+    background-color: #FF0048;
+}
+
+.cat .cat-description .btn.btn-dislike:hover {
+    background-color: #FF80A4;
+}
+
+.cat .cat-image {
+    float: left;
+    width: 60%
+}
+
+.cat .cat-image img {
+    width: 100%;
+    height: auto;
+}
+
+#page {
+    padding: 20px;
+    width: 75%;
+    height: 100%;
+    float: left;
+}
+
+#sidebar {
+    background-color: white;
+    width: 20%;
+    height: 100%;
+    overflow: visible;
+    float: right;
+}
+
+@media screen and (max-width: 600px) {
+    #nav {
+        position: absolute;
+        width: 100%;
+        z-index: 1000;
+        overflow-y: hidden;
+
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+    }
+
+    #nav:hover {
+        height: 290px;
+    }
+
+    #nav #logo {
+        display: block;
+        float: none;
+    }
+
+    #nav .nav-item {
+         float: none;
+         border-bottom: 10px solid #ffffff;
+         height: 25px;
+     }
+
+    #page {
+        padding-top: 68px;
+    }
+
+    .cat-description p {
+        display: none;
+    }
+}
+
+.icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+}
+
+.icon-thumbs-up {
+    background-image: url('../img/thumbs-up.png');
+}
+
+.icon-thumbs-down {
+    background-image: url('../img/thumbs-down.png');
+}
