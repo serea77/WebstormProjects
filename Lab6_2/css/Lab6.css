@@ -1,0 +1,36 @@
+body{
+    font-size: xx-large;
+    font-weight: bold;
+    color: azure;
+    background-color: cadetblue;
+}
+
+textarea{
+    width: 400px;
+    height: 100px;
+    font-size: large;
+    display: ruby-text;
+    margin-bottom: 10px;
+    background-color: azure;
+}
+.btn-save{
+    width: 100px;
+    height: 50px;
+    background-color: darkorange;
+    font-size: large;
+    color: azure;
+
+}
+.task{
+
+}
+.task-content{
+
+}
+.modify{
+    opacity: 0;
+}
+p:hover{
+    color: darkorange;
+}
+
