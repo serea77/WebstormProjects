@@ -12,6 +12,7 @@ textarea{
     display: ruby-text;
     margin-bottom: 10px;
     background-color: azure;
+    color: black;
 }
 .btn-save{
     width: 100px;

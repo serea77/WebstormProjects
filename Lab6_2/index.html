@@ -7,26 +7,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css">
     <link rel="stylesheet" href="css/Lab6.css">
+
 
 </head>
 <body>
 <h1>Task gestion</h1>
-<div id="tasks-container">
+<div id="tasks-container" class="container">
     <div id="tasks-list"></div>
 </div>
 
 <script type="text/template" id="task-tpl">
     <p id="error-handler" style="display: none">Une tache ne doit pas etre vide</p>
     <div id="task-editor-container">
-        <textarea id="task-editor" rows="4" cols="50" placeholder="inscriver une tache ici...."></textarea>
-        <button id="btn-add-task">Add</button>
+        <textarea  class="textarea" id="task-editor" rows="4" cols="50" placeholder="inscriver une tache ici...."></textarea>
+        <button class="btn btn-primary" id="btn-add-task">Add</button>
     </div>
     <% _.each(tasks, function(task) { %>
     <div class="task">
         <textarea class="task-content"><%= task.task %></textarea>
-        <button class="btn-save" id="btn-save-task" data-id="<%= task.id %>">Save</button>
-        <button id="btn-del-task" data-id="<%= task.id %>">Delete</button>
+        <button class="btn btn-primary" id="btn-save-task" data-id="<%= task.id %>">Save</button>
+        <button class="btn btn-primary" id="btn-del-task" data-id="<%= task.id %>">Delete</button>
     </div>
 
     <% });%>
