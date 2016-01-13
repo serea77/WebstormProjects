@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyDataService">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo $http get Services</title>
+    <link rel="stylesheet" href="css/simple.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script src="scripts/controllers/httpgetservice.js"></script>
+</head>
+<body ng-controller="MyController">
+<h1>Demo $http get Services</h1>
+<br>
+<button ng-click="getAllUsers()">get Data</button>
+<br>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Country</th>
+    </tr>
+    </thead>
+    <tbody ng-repeat="user in users">
+    <tr ng-class="{even: $even, odd: $odd}">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.country}}</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

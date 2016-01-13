@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="LogService">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Log Service</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script src="scripts/controllers/logservice.js"></script>
+</head>
+<body>
+<h1>Demo Log Service</h1>
+<br>
+<div ng-controller="LogController">
+    <p>
+        <label for"message">Message:</label>
+        <input type="text" id="message" ng-model="message">
+    </p>
+    <p>
+        <button ng-click="$log.log(message)">Log</button>
+        <button ng-click="$log.warn(message)">Warning</button>
+        <button ng-click="$log.info(message)">Info</button>
+        <button ng-click="$log.error(message)">Debug</button>
+    </p>
+</div>
+</body>
+</html>

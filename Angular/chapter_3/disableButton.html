@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Disable button</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+</head>
+<body>
+<p> Demo disable button. Checked CheckBox to enable button</p>
+<br>
+<p><input type="checkbox" ng-model="agree"> I agree to the terms & conditions</p>
+<p>
+    <button type="submit" ng-disabled="!agree">Submit</button>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyDataService">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo http post service</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script src="scripts/controllers/httppostservice.js"></script>
+</head>
+<body ng-controller="MyController">
+<h1>Demo $http post service</h1>
+<br>
+<form>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" ng-model="customer.name">
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" ng-model="customer.email">
+    </div>
+    <div>
+        <label for="selectcountry">Country</label>
+        <select name="selectcoutry" id="selectcountry" ng-model="customer.country">
+            <option value="AU">Australia</option>
+            <option value="CA">Canada</option>
+            <option value="FR">France</option>
+            <option value="DE">Germany</option>
+            <option value="NL">Netherlands</option>
+            <option value="CH">Switzerland</option>
+            <option value="GB">United Kingdom</option>
+            <option value="US">United States</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit" ng-click="save()">Submit</button>
+    </div>
+    <br>
+    <div>
+        <p>Sending data: {{customer}}</p>
+        <p>Response data: {{result}}</p>
+    </div>
+</form>
+</body>
+</html>

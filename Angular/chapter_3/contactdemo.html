@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ContactModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Calling AngularJS Controller</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script src="scripts/controllers/contactmodule.js"></script>
+    <script language="JavaScript">
+        function getContact(){
+            var mydiv = document.getElementById('mydiv');
+            var scope = angular.element(mydiv).scope();
+            var contact = scope.contact;
+            scope.$apply();
+            alert("Read contact." + JSON.stringify(contact));
+        }
+        function calculate(){
+            var mydiv = document.getElementById('mydiv');
+            var scope = angular.element(mydiv).scope();
+            var result = scope.calculate(10,10);
+            alert("Call AngularJS controller function Result : " + result);
+        }
+
+    </script>
+</head>
+<body>
+<p>Demo appelant une fonction d'un controller AngularJS avec du javascript externe</p>
+<div id="mydiv" ng-controller="ContactController">
+    <button onclick="getContact()">Get Contact</button>
+    <button onclick="calculate()">Calculate</button>
+</div>
+
+</body>
+</html>

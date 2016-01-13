@@ -1,0 +1,4 @@
+[
+  {"name":"user1" , "email": "user1@email.com", "country":"UK" },
+  {"name":"user2" , "email": "user2@email.com", "country":"DE" }
+]

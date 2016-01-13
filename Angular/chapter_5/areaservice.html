@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyService">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo My service</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script src="scripts/controllers/angularservice.js"></script>
+</head>
+<body ng-controller="MyController">
+<div>
+    <p>
+        <label for="val">Input Number:</label>
+        <input type="number" id="val" ng-model="val">
+    </p>
+    <p>
+        {{result}}
+    </p>
+    <p>
+        <button ng-click="calculateSquare(val)">Calculate square</button>
+        <button ng-click="calculateCircle(val)">Calculate circle</button>
+    </p>
+</div>
+
+</body>
+</html>

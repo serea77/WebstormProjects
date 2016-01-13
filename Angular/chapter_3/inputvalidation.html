@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="InputValidation">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Input validation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script src="scripts/controllers/inputvalidation.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body ng-controller="MyController">
+<form name="form" ng-submit="submitForm(form.$valid)" novalidate class="myform">
+    <div>
+        <p>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" ng-model="name" required>
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="text" id="email" ng-model="email" required>
+        </p>
+        <p>
+            <button type="submit" ng-disabled="form.$invalid">Submit</button>
+        </p>
+    </div>
+</form>
+
+</body>
+</html>

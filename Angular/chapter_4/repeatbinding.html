@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="RepeatBinding">
+<head>
+    <meta charset="UTF-8">
+    <title>Repeat Binding Demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script src="scripts/controllers/repeatbinding.js"></script>
+    <style>
+        .item{
+            width: 350px;
+            height: 50px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body ng-controller="MonController">
+<h2>Demo data binding with repeat data</h2>
+<br>
+<div ng-repeat="customer in customers">
+    <p class="item">{{customer.name}} | {{customer.email}} | {{customer.country}}</p>
+</div>
+
+</body>
+</html>
