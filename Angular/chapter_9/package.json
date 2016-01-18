@@ -1,0 +1,13 @@
+{
+  "name": "angularjs-node",
+  "version": "0.0.1",
+  "description": "simple app for angularjs+nodejs+express+mongodb",
+  "private": true,
+  "dependencies":{
+      "express": "latest",
+      "mongodb": "latest",
+      "cors": "2.7.1"
+
+  }
+
+}

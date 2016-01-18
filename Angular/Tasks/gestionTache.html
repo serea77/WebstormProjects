@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyTaskService">
+<head>
+    <meta charset="UTF-8" >
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script src="scripts/controllers/tasksservice.js"></script>
+    <title>Gestion des tâches</title>
+</head>
+<body ng-controller="TaskController">
+<h1> Gestion des tâches</h1>
+<div ng-repeat="task in tasks">
+    <textarea class="task-content" id={{task.id}}>{{task.task}}</textarea>
+    <button id={{task.id}} ng-click="saveChangeTask()" name="sauverButton">Sauver</button>
+    <button id={{task.id}} ng-click="deleteTask()"name="deleteButton">Effacer</button>
+</div>
+<div>
+    <button id="addTask" ng-click="addTask()" >Add</button>
+</div>
+<div id="zoneNouvelleTache">
+    <h2> Ajouter une nouvelle tache</h2>
+    <textarea id="nouvelleTache" placeholder="inscriver une tâche"></textarea>
+    <button id="saveTask" ng-click="saveNewTask()">save</button>
+</div>
+</body>
+</html>

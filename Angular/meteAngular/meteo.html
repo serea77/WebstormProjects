@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MonServiceMeteo">
+<head>
+    <meta charset="UTF-8">
+    <title>Test meteo Angular</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script src="scripts/controllers/meteoGetService.js"></script>
+</head>
+<body ng-controller="meteoController">
+    <h1>Le meteo de {{location}}</h1>
+    <br>
+    <table>
+        <thead>
+        <tr>
+            <th>Jour</th>
+            <th>Condition</th>
+            <th>max</th>
+            <th>min</th>
+        </tr>
+        </thead>
+        <tbody ng-repeat="jour in jours">
+        <tr>
+            <td>{{jour.date.weekday}}</td>
+            <td><img src={{jour.icon_url}}></td>
+            <td>{{jour.high.celsius}}</td>
+            <td>{{jour.low.celsius}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>
