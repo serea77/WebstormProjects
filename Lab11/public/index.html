@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion de base de donnee</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+
+<body>
+<h1>Bienvenue sur le site de gestion des usagers</h1>
+
+<div>
+    <button id="ajouterUserBouton">Ajouter un Usager</button>
+</div>
+
+<div>
+
+    <h2>list of users</h2>
+    <div id="userButtonsContainer">
+        <button id="simpleUserButton">Usager simple</button>
+        <button id="completeUserButton">Usager complet</button>
+        <button id="preferenceUserButton">Usager preférenciel</button>
+    </div>
+    <div id="simple-user-container">
+        <div><label>Nom</label><input type="text" id="nameInput" placeholder="Nom"></div>
+        <div><label>password</label><input type="password" id="passwordInput" placeholder="Mot de passe"></div>
+        <div><button type="submit" id="submitSimpleButton">Sauver</button></div>
+</div>
+    <div id="complete-user-container">
+        <div><label>Nom</label><input type="text" id="nameCompleteInput" placeholder="Nom"></div>
+        <div><label>password</label><input type="password" id="passwordCompleteInput" placeholder="Mot de passe"></div>
+        <div><label>Adresse</label></div>
+        <div><label>adresse de rue</label><input  type="text" id="addressStreetInput"></div>
+        <div><label>Ville</label><input type="text" id="cityInput"></div>
+        <div><label>Province</label><input type="text" id="provinceInput"></div>
+        <div><label>Pays</label><input type="text" id="countryInput"></div>
+        <div><label>Code Postal</label><input type="text" id="postalCodeInput"></div>
+        <div><label>Adresse Email</label><input type="text" id="emailInput"></div>
+        <div><label>Numero de téléphone</label><input type="text" id="phoneInput"></div>
+        <div><button type="submit" id="submitCompleteButton">Sauver</button></div>
+    </div>
+    <div id="favorite-user-container">
+        <div><label>Nom</label><input type="text" id="nameFavoriteInput" placeholder="Nom"></div>
+        <div><label>password</label><input type="password" id="passwordFavoriteInput" placeholder="Mot de passe"></div>
+        <div><label>Adresse</label></div>
+        <div><label>adresse de rue</label><input  type="text" id="addressStreetFavoriteInput"></div>
+        <div><label>Ville</label><input type="text" id="cityFavoriteInput"></div>
+        <div><label>Province</label><input type="text" id="provinceFavoriteInput"></div>
+        <div><label>Pays</label><input type="text" id="countryFavoriteInput"></div>
+        <div><label>Code Postal</label><input type="text" id="postalFavoriteCodeInput"></div>
+        <div><label>Adresse Email</label><input type="text" id="emailFavoriteInput"></div>
+        <div><label>Numero de téléphone</label><input type="text" id="phoneFavoriteInput"></div>
+        <div><label>Console de jeux video preferée</label><input type="text" id="videoGameSystemFavoriteInput"></div>
+        <div><label>Jeux vidéo préféré</label><input type="text" id="videoGamesFavoriteInput"></div>
+        <div><button type="submit" id="submitFavoriteButton">Sauver</button></div>
+    </div>
+
+    <div id="userContainer">
+        le conteneur des usagers;
+
+    </div>
+
+</div>
+<script type="text/template" id="users-template">
+    <% _.each(users, function(user) { %>
+        <div>
+            <div> name : <%= user.name %></div>
+            <% if( user.type === "complete" ||  user.type === "favorite") { %>
+                <div>Adress:</div>
+                <div>Street Address : <%= user.address.streetAdress %></div>
+                <div>City: <%= user.address.city %></div>
+                <div>Province: <%= user.address.province %></div>
+                <div>Pays : <%= user.address.country %></div>
+                <div>Postal Code: <%= user.address.postalCode %></div>
+                <div>phone number: <%= user.phoneNumber %></div>
+                <div>email: <%= user.email %></div>
+            <% }; %>
+            <% if( user.type === "favorite") { %>
+                <div>Favorite System : <%= user.system %></div>
+                <div>Favorite game : <%= user.game %></div>
+            <% } %>
+        </div>
+        <div class>
+            <button class="effaceUserBouton" id=<%= user.name %>>effacer</button>
+            <button class="modifierUserBouton" id=<%= user.name %>> Modifier</button>
+        </div>
+    <% });%>
+</script>
+
+<script type="text/javascript" src="userGestion.js"></script>
+
+</body>
+</html>

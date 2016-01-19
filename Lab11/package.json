@@ -1,0 +1,19 @@
+{
+  "name": "mongoTp",
+  "version": "0.0.0",
+  "description": "application BD",
+  "main": "userGestion.js",
+  "dependencies": {
+    "express": ">=4.13.1",
+    "mongojs": ">=2.0.0",
+    "cors": "2.7.1",
+    "body-parser": "1.14.1",
+    "path": "0.12.7"
+  },
+  "devDependencies":{},
+  "scripts": {
+    "test": "echo \"Error: test not specified \" && exit 1",
+    "start": "node app.js"},
+  "author": "",
+  "license": "ISC"
+}
