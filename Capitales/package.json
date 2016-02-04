@@ -1,0 +1,19 @@
+{
+  "name": "capitalesRestAPI",
+  "version": "0.0.1",
+  "description": "serveur stats capitales Quebec",
+  "main": "playerGestion.js",
+  "dependencies":{
+    "express": ">=4.13.1",
+    "mongojs": ">=2.0.0",
+    "cors": ">=2.7.1",
+    "body-parser": ">=1.14.1",
+    "path": ">=0.12.7"
+  },
+  "scripts":{
+    "test": "echo \"error: test not specified \" && exit 1",
+    "start": "node app.js"
+  },
+  "author":"Sebastien Reader",
+  "license": "ISC"
+}
